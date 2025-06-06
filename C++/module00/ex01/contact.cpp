@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 12:53:41 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/04 14:05:14 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/06 16:40:39 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ void Contact::setcontact() {
     std::cout << "Entrez le prénom : ";
     std::getline(std::cin, first_name);
     while (first_name.empty()) {
-        std::cout << "❌ Le prénom ne peut pas être vide ! Réessayez : ";
+        std::cout << "Le prénom ne peut pas être vide ! Réessayez : ";
         std::getline(std::cin, first_name);
     }
 
     std::cout << "Entrez le nom : ";
     std::getline(std::cin, last_name);
     while (last_name.empty()) {
-        std::cout << "❌ Le nom ne peut pas être vide ! Réessayez : ";
+        std::cout << "Le nom ne peut pas être vide ! Réessayez : ";
         std::getline(std::cin, last_name);
     }
 
     std::cout << "Entrez le surnom : ";
     std::getline(std::cin, surname);
     while (surname.empty()) {
-        std::cout << "❌ Le surnom ne peut pas être vide ! Réessayez : ";
+        std::cout << "Le surnom ne peut pas être vide ! Réessayez : ";
         std::getline(std::cin, surname);
     }
     bool is_valid = false;
@@ -45,7 +45,7 @@ void Contact::setcontact() {
         std::cout << "Entrez le numéro de téléphone : ";
         std::getline(std::cin, number);
         while (number.empty()) {
-            std::cout << "❌ Le numéro ne peut pas être vide ! Réessayez : ";
+            std::cout << "Le numéro ne peut pas être vide ! Réessayez : ";
             std::getline(std::cin, number);
         }
         is_valid = true;
@@ -58,15 +58,23 @@ void Contact::setcontact() {
             }
         }
         if (!is_valid)
-            std::cout << "❌ Le numéro de téléphone doit être composé uniquement de chiffres !" << std::endl;
+            std::cout << "Le numéro de téléphone doit être composé uniquement de chiffres !" << std::endl;
     }
 
     std::cout << "Entrez le secret le plus sombre : ";
     std::getline(std::cin, darkest_secret);
     while (darkest_secret.empty()) {
-        std::cout << "❌ Le secret ne peut pas être vide ! Réessayez : ";
+        std::cout << "Le secret ne peut pas être vide ! Réessayez : ";
         std::getline(std::cin, darkest_secret);
     }
+}
+
+void    Contact::display__contact() const
+{
+    std::cout << "first name > " << first_name << std::endl;
+    std::cout << "last name > " << last_name << std::endl;
+    std::cout << "surname > " << surname << std::endl;
+    std::cout << "number > " << number << std::endl;
 }
 
 void    Contact::displaycontact(int index) const

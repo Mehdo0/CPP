@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 21:55:41 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/04 13:56:36 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/06 16:38:32 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void Phonebook::AddContact()
 void    Phonebook::display(int index) const
 {
     Contact c = contact[index];
-    std::cout << "         ";
+    std::cout << "          ";
     std::cout << index;
     std::cout << "|";
     if (c.get_firstname().length() <= 10)
@@ -112,6 +112,12 @@ void    Phonebook::display(int index) const
         std::cout << ".";
     }
     std::cout << "|" << std::endl;
+}
+
+void    Phonebook::display_bis(int index) const
+{
+    Contact c = contact[index];
+    c.display__contact();
 }
 
 int Phonebook::getindex()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 14:00:17 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/03 16:54:37 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/06 16:33:16 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     Contact();  
     void setcontact();
     void displaycontact(int index) const;
+    void display__contact() const;
     std::string get_firstname();
     std::string get_lastname();
     std::string get_surname();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 14:00:31 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/03 17:02:22 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/06 16:37:35 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
     Phonebook();
     void AddContact();
     void display(int index) const;
+    void display_bis(int index) const;
     void displayAllContacts();
     int getindex();
 };
