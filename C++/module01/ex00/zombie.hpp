@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:49:52 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/04 16:59:50 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/09 15:56:03 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
     std::string nom;
 
 public:
-    Zombie(); // constructeur par défaut
+    Zombie();
     void set_name(std::string name);
     void announce();
 };

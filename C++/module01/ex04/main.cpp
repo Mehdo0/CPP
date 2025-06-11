@@ -3,51 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:45:47 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/09 14:21:15 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/09 16:26:57 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-int main(int ac,char **av)
+#include <iostream>
+#include <fstream>
+#include <string>
+
+std::string replaceAll(const std::string& line, const std::string& s1, const std::string& s2)
 {
-    if (ac != 4)
+    std::string result;
+    size_t pos = 0, found;
+
+    while ((found = line.find(s1, pos)) != std::string::npos)
     {
-        std::cout << "Error\nil faut trois arguments !\n";
-        return (1);
+        result.append(line, pos, found - pos);
+        result += s2;
+        pos = found + s1.length();
     }
-    std::string s1 = av[2];
-    std::string s2 = av[3];
-    
-    char    *filename = av[1];
-    std::ifstream File(filename);
-    if (File.fail())
-    {
-        std::cout << "Error\nle fichiers ne peut pas etre ouvert !\n";
-        return (1);
+    result += line.substr(pos);
+    return result;
+}
+
+int main(int argc, char** argv) {
+    if (argc != 4) {
+        std::cerr << "Usage: ./replace <filename> <s1> <s2>\n";
+        return 1;
     }
-    std::string OutFileName = std::string(av[1]) + ".replace";
-    std::ofstream outfile(OutFileName);
-    std::string str;
-    bool replace = false;
 
+    std::string filename = argv[1];
+    std::string s1 = argv[2];
+    std::string s2 = argv[3];
 
-    while (std::getline(File, str)) {
-        std::string NewLine;
-        size_t pos = 0;
-        size_t found;
-
-        while ((found = str.find(s1, pos)) != std::string::npos)
-        {
-            NewLine += str.substr(pos, found - pos);
-            NewLine += s2;
-            pos = found + s1.length();
-        }
-        NewLine += str.substr(pos);
-        outfile << NewLine << std::endl;
+    if (s1.empty()) {
+        std::cerr << "Error: s1 cannot be empty (infinite replacement)\n";
+        return 1;
     }
-    return (0);
+
+    std::ifstream input(filename.c_str());
+    if (!input) {
+        std::cerr << "Error: cannot open input file.\n";
+        return 1;
+    }
+
+    std::string outFilename = filename + ".replace";
+    std::ofstream output(outFilename.c_str());
+    if (!output) {
+        std::cerr << "Error: cannot create output file.\n";
+        return 1;
+    }
+
+    std::string line;
+    while (std::getline(input, line)) {
+        output << replaceAll(line, s1, s2) << '\n';
+    }
+
+    return 0;
 }

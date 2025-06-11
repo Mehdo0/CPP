@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:48:16 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/09 11:16:44 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/09 15:57:59 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main() {
 
     Zombie* horde = zombieHorde(5, "Bob");
 
-    delete[] horde; // nettoyage propre après usage
+    delete[] horde;
 
     randomChump("Zombinette");
 
