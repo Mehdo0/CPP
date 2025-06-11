@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   scavtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/01 20:03:28 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/01 21:51:33 by mmouaffa         ###   ########.fr       */
+/*   Created: 2025/04/21 15:22:58 by mmouaffa          #+#    #+#             */
+/*   Updated: 2025/04/21 15:38:56 by mmouaffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
+
 #include <iostream>
-#include <bits/stdc++.h>
-using  namespace std;
+#include <string>
+#include "claptrap.hpp"
 
+class Scavtrap : public Claptrap{
+    public:
+    Scavtrap(std::string name);
+    ~Scavtrap();
+    void    attack(const std::string &target);
+    void    guardgate();
+    
+};
 
-int main(int ac, char **av)
-{
-    string str;
-    if (ac > 1)
-    {
-        for (int i = 1; i < ac; i++)
-            cout << av[i];
-        cout << endl;
-        return (0);
-    }
-    cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    cout << endl;
-    return (0);
-}
+#endif

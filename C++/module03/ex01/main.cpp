@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/01 21:52:02 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/03 13:59:46 by mmouaffa         ###   ########.fr       */
+/*   Created: 2025/04/18 14:50:09 by mmouaffa          #+#    #+#             */
+/*   Updated: 2025/04/21 17:13:52 by mmouaffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "scavtrap.hpp"
 
-#include <iostream>
-#include <string>
-#include "phonebook.hpp"
+int main() {
+    std::cout << "=== Création du robot ===" << std::endl;
+    Scavtrap serena("Serena");
 
-void displayMenu();
+    std::cout << "\n=== Attaque d'une cible ===" << std::endl;
+    serena.attack("un méchant robot");
 
-#endif
+    std::cout << "\n=== Activation du mode Gardien ===" << std::endl;
+    serena.guardgate();
+
+    std::cout << "\n=== Fin du programme ===" << std::endl;
+    return 0;
+}
