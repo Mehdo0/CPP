@@ -6,7 +6,7 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 21:51:42 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/06/06 16:37:16 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/06/11 15:56:02 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,12 @@ int main() {
             std::cout << "Quel contact voulez-vous voir ? Entrez l'index : ";
             std::string input;
             std::getline(std::cin, input);
-            int index = stoi(input);
+            std::stringstream ss(input);
+            int index;
+            if (!(ss >> index)) {
+                // Gestion d'erreur : input n'est pas un entier valide
+                std::cerr << "Invalid input" << std::endl;
+            }
             if (index >= 0 && index < 8 && phonebook.getindex() > index)
                 phonebook.display_bis(index);
             else
