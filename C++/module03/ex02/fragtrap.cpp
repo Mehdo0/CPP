@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fragtrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:18:41 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/21 17:24:03 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:58:49 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ Fragtrap::~Fragtrap(){
 }
 
 void    Fragtrap::high_fives(void){
-    std::cout << this->name << " vous propose un high five 🍃🫩" <<std::endl;
+    std::cout << this->name << " vous propose un high five" <<std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:45:47 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/06/09 16:26:57 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/06/11 16:59:03 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,41 +28,45 @@ std::string replaceAll(const std::string& line, const std::string& s1, const std
         pos = found + s1.length();
     }
     result += line.substr(pos);
-    return result;
+    return (result);
 }
 
-int main(int argc, char** argv) {
-    if (argc != 4) {
+int main(int argc, char** argv)
+{
+    if (argc != 4)
+    {
         std::cerr << "Usage: ./replace <filename> <s1> <s2>\n";
-        return 1;
+        return (1);
     }
 
     std::string filename = argv[1];
     std::string s1 = argv[2];
     std::string s2 = argv[3];
 
-    if (s1.empty()) {
+    if (s1.empty())
+    {
         std::cerr << "Error: s1 cannot be empty (infinite replacement)\n";
-        return 1;
+        return (1);
     }
-
     std::ifstream input(filename.c_str());
-    if (!input) {
+    if (!input)
+    {
         std::cerr << "Error: cannot open input file.\n";
-        return 1;
+        return (1);
     }
-
     std::string outFilename = filename + ".replace";
     std::ofstream output(outFilename.c_str());
-    if (!output) {
+    if (!output)
+    {
         std::cerr << "Error: cannot create output file.\n";
-        return 1;
+        return (1);
     }
 
     std::string line;
-    while (std::getline(input, line)) {
+    while (std::getline(input, line))
+    {
         output << replaceAll(line, s1, s2) << '\n';
     }
 
-    return 0;
+    return (0);
 }

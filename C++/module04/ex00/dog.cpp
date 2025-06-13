@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scavtrap.hpp                                       :+:      :+:    :+:   */
+/*   dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 14:57:15 by mehdi             #+#    #+#             */
-/*   Updated: 2025/06/12 14:57:34 by mehdi            ###   ########.fr       */
+/*   Created: 2025/06/12 23:02:44 by mehdi             #+#    #+#             */
+/*   Updated: 2025/06/12 23:19:16 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#include "main.hpp"
 
-#include <iostream>
-#include <string>
-#include "claptrap.hpp"
+Dog::Dog() {
+    type = "Dog";
+    std::cout << "A Dog is born!\n";
+}
+Dog::~Dog() {}
+void Dog::makeSound() const {
+    std::cout << "WOUF 🐕\n";
+}
+std::string Dog::getType() const {
+    return type;
+}
 
-class Scavtrap : public Claptrap{
-    public:
-    Scavtrap(std::string name);
-    ~Scavtrap();
-    void    attack(const std::string &target);
-    void    guardgate();
-    
-};
-
-#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:12:01 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/18 14:14:39 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:42:25 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,4 +134,12 @@ Fixed Fixed::operator--(int) {
     Fixed temp = *this;
     --_value;
     return temp;
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
+    return (a > b) ? a : b;
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
+    return (a > b) ? a : b;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:12:01 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/11 16:06:33 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:23:13 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ Fixed::Fixed() : _value(0){
 Fixed::Fixed(const Fixed& other) {
     std::cout << "Copy constructor called\n";
     this->_value = other._value;
+    std::cout <<"getRawBits member function called" <<std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& other){
     std::cout << "Copy assignment operator called\n";
     if (this != &other)
         this->_value = other._value;
+    std::cout <<"getRawBits member function called" <<std::endl;
     return *this;
 }
 
@@ -34,6 +36,7 @@ Fixed::~Fixed(){
 }
 
 int Fixed::getRawBits(void)const {
+    std::cout <<"getRawBits member function called" <<std::endl;
     return (this->_value);
 }
 

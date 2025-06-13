@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:07:37 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/18 14:14:34 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:42:19 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ public:
     Fixed operator++(int);  // post-incrément
     Fixed& operator--();    // pré-décrément
     Fixed operator--(int);  // post-décrément
+    static Fixed& max(Fixed& a, Fixed& b);
+    static const Fixed& max(const Fixed& a, const Fixed& b);
 };
 
 // Surcharge de l'opérateur <<

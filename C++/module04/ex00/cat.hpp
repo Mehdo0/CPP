@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scavtrap.hpp                                       :+:      :+:    :+:   */
+/*   cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 14:57:15 by mehdi             #+#    #+#             */
-/*   Updated: 2025/06/12 14:57:34 by mehdi            ###   ########.fr       */
+/*   Created: 2025/06/12 15:00:35 by mehdi             #+#    #+#             */
+/*   Updated: 2025/06/12 23:16:37 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <iostream>
-#include <string>
-#include "claptrap.hpp"
+#include "main.hpp"
+#include "animal.hpp"
 
-class Scavtrap : public Claptrap{
-    public:
-    Scavtrap(std::string name);
-    ~Scavtrap();
-    void    attack(const std::string &target);
-    void    guardgate();
-    
+class Cat : public Animal {
+public:
+    Cat();
+    virtual ~Cat();
+    void makeSound() const ;
+    std::string getType() const ;
 };
 
 #endif
