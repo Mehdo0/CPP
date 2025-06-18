@@ -6,7 +6,7 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:12:01 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/06/12 14:42:25 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/06/18 14:06:34 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,9 +137,17 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed& Fixed::max(Fixed& a, Fixed& b) {
-    return (a > b) ? a : b;
+    return ((a > b) ? a : b);
 }
 
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
-    return (a > b) ? a : b;
+    return ((a > b) ? a : b);
+}
+
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+    return ((a < b) ? a : b);
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
+    return ((a < b) ? a : b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:07:37 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/18 13:18:46 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/18 13:49:30 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ private:
     static const int _fractionalBits = 8;
 
 public:
-    Fixed();                               // Constructeur par défaut
-    Fixed(const int intValue);             // Constructeur avec int
-    Fixed(const float floatValue);         // Constructeur avec float
-    Fixed(const Fixed& other);             // Constructeur de copie
-    Fixed& operator=(const Fixed& other);  // Opérateur d’affectation
-    ~Fixed();                              // Destructeur
+    Fixed();                                
+    Fixed(const int intValue);              
+    Fixed(const float floatValue);          
+    Fixed(const Fixed& other);              
+    Fixed& operator=(const Fixed& other);  
+    ~Fixed();                              
 
     int getRawBits(void) const;
     void setRawBits(int const raw);
@@ -35,7 +35,6 @@ public:
     int toInt(void) const;
 };
 
-// Surcharge de l'opérateur <<
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif

@@ -6,23 +6,23 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:12:01 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/06/12 14:34:48 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/06/18 14:00:46 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fixed.hpp"
-#include <cmath> // pour roundf()
+#include <cmath>
 
 Fixed::Fixed() : _value(0){
     std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const int intValue) {
+Fixed::Fixed(const int intValue) { // On stock une valeure entiere sous puissance de 2 afin de faciliter les calculs
     std::cout << "Int constructor called\n";
     _value = intValue << _fractionalBits;
 }
 
-Fixed::Fixed(const float floatValue) {
+Fixed::Fixed(const float floatValue) { // On simule un nombre à virgule en utilisant un entier
     std::cout << "Float constructor called\n";
     _value = roundf(floatValue * (1 << _fractionalBits));
 }
@@ -40,8 +40,6 @@ Fixed& Fixed::operator=(const Fixed& other) {
     return *this;
 }
 
-
-
 Fixed::~Fixed(){
     std::cout << "Destructor called\n";
 }
@@ -52,10 +50,10 @@ int Fixed::getRawBits(void)const {
 }
 
 void    Fixed::setRawBits(int const raw){
+    std::cout <<"setRawBits member function called" <<std::endl;
     this->_value = raw;
 }
 
-// Conversion vers float
 float Fixed::toFloat(void) const {
     return (float)_value / (1 << _fractionalBits);
 }
@@ -64,7 +62,6 @@ int Fixed::toInt(void) const {
     return _value >> _fractionalBits;
 }
 
-// Surcharge de l’opérateur <<
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
     out << fixed.toFloat();
     return out;
