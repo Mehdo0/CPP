@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   claptrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:44:23 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/18 14:52:13 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/20 10:19:20 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ Claptrap::Claptrap(std::string name)
     std::cout << "ClapTrap " << this->name << " has been created!" << std::endl;
 }
 
-// Constructeur de copie
 Claptrap::Claptrap(const Claptrap& other) {
     *this = other;
     std::cout << "ClapTrap " << this->name << " has been copied!" << std::endl;
 }
 
-// Opérateur d'affectation
 Claptrap& Claptrap::operator=(const Claptrap& other) {
     if (this != &other) {
         this->name = other.name;
@@ -35,7 +33,6 @@ Claptrap& Claptrap::operator=(const Claptrap& other) {
     return *this;
 }
 
-// Destructeur
 Claptrap::~Claptrap() {
     std::cout << "ClapTrap " << this->name << " has been destroyed!" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:50:09 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/04/18 14:54:35 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/06/20 10:18:29 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
     clap1.attack("target2");
     clap1.beRepaired(2);
 
-    Claptrap clap2 = clap1; // test du constructeur de copie
+    Claptrap clap2 = clap1;
     clap2.attack("target3");
 
     return 0;

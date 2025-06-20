@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   wronganimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 15:01:29 by mehdi             #+#    #+#             */
-/*   Updated: 2025/06/18 14:15:16 by mehdi            ###   ########.fr       */
+/*   Created: 2025/06/18 14:12:20 by mehdi             #+#    #+#             */
+/*   Updated: 2025/06/18 14:14:35 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include <iostream>
-#include <string>
-#include "animal.hpp"
-#include "cat.hpp"
-#include "dog.hpp"
-#include "wronganimal.hpp"
-#include "wrongcat.hpp"
+#include "main.hpp"
+
+class Wronganimal {
+protected:
+    std::string type;
+public:
+    Wronganimal();
+    virtual ~Wronganimal();
+    virtual void makeSound() const;
+    virtual std::string getType() const;
+};
 
 #endif
