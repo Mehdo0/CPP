@@ -6,7 +6,7 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:12:38 by mehdi             #+#    #+#             */
-/*   Updated: 2025/06/18 14:14:24 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/07/03 14:04:30 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #define WRONGCAT_HPP
 
 #include "main.hpp"
-#include "animal.hpp"
+#include "wronganimal.hpp"
 
 class Wrongcat : public Wronganimal {
 public:
     Wrongcat();
-    virtual ~Wrongcat();
+    ~Wrongcat();
     void makeSound() const ;
     std::string getType() const ;
 };

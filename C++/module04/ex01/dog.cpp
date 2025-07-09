@@ -5,33 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 23:02:44 by mehdi             #+#    #+#             */
-/*   Updated: 2025/07/09 11:12:29 by mehdi            ###   ########.fr       */
+/*   Created: 2025/07/09 11:01:33 by mehdi             #+#    #+#             */
+/*   Updated: 2025/07/09 11:01:40 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "dog.hpp"
 
 Dog::Dog() {
+    std::cout << "Dog constructor called\n";
     type = "Dog";
-    std::cout << "A Dog is born!\n";
+    brain = new Brain();
 }
+
 Dog::Dog(const Dog& other) : Animal(other) {
     std::cout << "Dog copy constructor called\n";
+    brain = new Brain(*other.brain);
 }
 
 Dog& Dog::operator=(const Dog& other) {
     std::cout << "Dog assignment operator called\n";
     if (this != &other) {
         Animal::operator=(other);
+        delete brain;
+        brain = new Brain(*other.brain);
     }
     return *this;
 }
-Dog::~Dog() {std::cout << "An dog is dead !" << std::endl;}
-void Dog::makeSound() const {
-    std::cout << "WOUF 🐕\n";
-}
-std::string Dog::getType() const {
-    return type;
+
+Dog::~Dog() {
+    delete brain;
+    std::cout << "Dog destructor called\n";
 }
 
+void Dog::makeSound() const {
+    std::cout << "Woof! 🐶\n";
+}

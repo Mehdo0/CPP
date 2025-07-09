@@ -1,6 +1,6 @@
-NAME = Polymorphisme
+NAME = Je_ne_veux_pas_brûler_le_monde
 
-SRC = main.cpp dog.cpp cat.cpp animal.cpp wronganimal.cpp wrongcat.cpp
+SRC = main.cpp dog.cpp cat.cpp animal.cpp brain.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++

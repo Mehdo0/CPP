@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.hpp                                            :+:      :+:    :+:   */
+/*   dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 15:00:35 by mehdi             #+#    #+#             */
-/*   Updated: 2025/07/09 11:10:04 by mehdi            ###   ########.fr       */
+/*   Created: 2025/07/09 11:01:14 by mehdi             #+#    #+#             */
+/*   Updated: 2025/07/09 11:01:25 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include "main.hpp"
 #include "animal.hpp"
+#include "brain.hpp"
 
-class Cat : public Animal {
+class Dog : public Animal {
+private:
+    Brain* brain;
+
 public:
-    Cat();
-    virtual ~Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    void makeSound() const ;
-    std::string getType() const ;
+    Dog();
+    Dog(const Dog& other);
+    Dog& operator=(const Dog& other);
+    ~Dog();
+
+    void makeSound() const;
 };
 
 #endif

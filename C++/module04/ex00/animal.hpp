@@ -6,7 +6,7 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 15:00:35 by mehdi             #+#    #+#             */
-/*   Updated: 2025/06/12 23:14:07 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/07/09 11:08:41 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ protected:
 public:
     Animal();
     virtual ~Animal();
+    Animal(const Animal& other);
+    Animal& operator=(const Animal& other);
     virtual void makeSound() const;
     virtual std::string getType() const;
 };
