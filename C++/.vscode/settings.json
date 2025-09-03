@@ -91,5 +91,6 @@
         "stacktrace": "cpp",
         "format": "cpp",
         "stdfloat": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
