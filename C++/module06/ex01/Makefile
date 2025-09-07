@@ -1,9 +1,10 @@
-NAME     = converter
+NAME     = Serializer
 CXX      = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
-       converter.cpp
+       Serializer.cpp \
+	   data.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -12,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp converter.hpp
+%.o: %.cpp Serializer.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

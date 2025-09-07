@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 16:17:06 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/09/07 16:28:02 by mmouaffa         ###   ########.fr       */
+/*   Created: 2025/09/07 18:51:48 by mmouaffa          #+#    #+#             */
+/*   Updated: 2025/09/07 19:04:09 by mmouaffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "converter.hpp"
-#include <iostream>
+#pragma once
 
-int main(int ac, char **av) {
-    if (ac != 2) {
-        std::cerr << "Usage: " << av[0] << " <literal>\n";
-        return 1;
-    }
-    std::string input(av[1]);
-    ScalarConverter::convert(input);
-    return 0;
-}
+class Data{
+    int value;
+    Data();
+    ~Data();
+};

@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 16:17:06 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/09/07 16:28:02 by mmouaffa         ###   ########.fr       */
+/*   Created: 2025/09/07 18:51:43 by mmouaffa          #+#    #+#             */
+/*   Updated: 2025/09/07 19:03:38 by mmouaffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "converter.hpp"
-#include <iostream>
+#pragma once
 
-int main(int ac, char **av) {
-    if (ac != 2) {
-        std::cerr << "Usage: " << av[0] << " <literal>\n";
-        return 1;
-    }
-    std::string input(av[1]);
-    ScalarConverter::convert(input);
-    return 0;
-}
+#include <cstdint>
+#include "data.hpp"
+
+
+class Serializer{
+    public:
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
+
+    private:
+    Serializer();
+    Serializer(const Serializer&);
+    Serializer& operator=(const Serializer&);
+    ~Serializer();
+};
