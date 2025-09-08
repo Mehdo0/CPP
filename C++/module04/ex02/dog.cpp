@@ -5,34 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 23:02:44 by mehdi             #+#    #+#             */
-/*   Updated: 2025/09/08 10:06:54 by mehdi            ###   ########.fr       */
+/*   Created: 2025/07/09 11:01:33 by mehdi             #+#    #+#             */
+/*   Updated: 2025/09/08 10:41:57 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "dog.hpp"
 
 Dog::Dog() {
+    std::cout << "Dog constructor called\n";
     type = "Dog";
-    std::cout << "A Dog is born!\n";
 }
-Dog::Dog(const Dog& other) : Animal(other) {
+
+Dog::Dog(const Dog& other) : AAnimal(other) {
     std::cout << "Dog copy constructor called\n";
 }
 
 Dog& Dog::operator=(const Dog& other) {
     std::cout << "Dog assignment operator called\n";
     if (this != &other) {
-        Animal::operator=(other);
+        AAnimal::operator=(other);
     }
     return *this;
 }
-Dog::~Dog() {std::cout << "An dog is dead !" << std::endl;}
+
+Dog::~Dog() {
+    std::cout << "Dog destructor called\n";
+}
 
 void Dog::makeSound() const {
-    std::cout << "WOUF 🐕\n";
+    std::cout << "Woof! 🐶\n";
 }
-std::string Dog::getType() const {
-    return type;
-}
-
