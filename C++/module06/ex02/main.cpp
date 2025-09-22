@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 18:59:24 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/09/22 14:57:23 by mehdi            ###   ########.fr       */
+/*   Created: 2025/09/20 10:58:43 by mehdi             #+#    #+#             */
+/*   Updated: 2025/09/22 14:57:35 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Base.hpp"
 #include <iostream>
-#include "Serializer.hpp"
-#include "data.hpp"
 
 int main() {
-    Data d;
 
-    std::cout << "Original Data address: " << &d << "\n";
-    uintptr_t raw = Serializer::serialize(&d);
-    std::cout << "Serialized integer value: " << raw << "\n";
-    Data* ptr = Serializer::deserialize(raw);
-    std::cout << "Deserialized Data address: " << ptr << "\n";
-    return 0;
+    for (int i = 0; i < 4; i++){
+        Base *P = generate();
+        identify(P);
+        identify(*P);
+        std::cout << std::endl;
+        delete (P);
+    }
+    return (0);
 }

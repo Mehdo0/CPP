@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 18:59:24 by mmouaffa          #+#    #+#             */
-/*   Updated: 2025/09/22 14:57:23 by mehdi            ###   ########.fr       */
+/*   Created: 2025/09/20 10:13:15 by mehdi             #+#    #+#             */
+/*   Updated: 2025/09/20 10:13:19 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Serializer.hpp"
-#include "data.hpp"
+#pragma once
 
-int main() {
-    Data d;
+#include "Base.hpp"
 
-    std::cout << "Original Data address: " << &d << "\n";
-    uintptr_t raw = Serializer::serialize(&d);
-    std::cout << "Serialized integer value: " << raw << "\n";
-    Data* ptr = Serializer::deserialize(raw);
-    std::cout << "Deserialized Data address: " << ptr << "\n";
-    return 0;
-}
+class C : public Base {};
