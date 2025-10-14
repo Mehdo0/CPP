@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmouaffa <mmouaffa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:08:33 by mehdi             #+#    #+#             */
-/*   Updated: 2025/09/07 18:28:54 by mmouaffa         ###   ########.fr       */
+/*   Updated: 2025/10/08 15:31:20 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "converter.hpp"
+
+bool is_float(const std::string& input){
+    for (int i = 0; input[i]; i++){
+        if (input[i] == '.')
+            return true;
+    }
+    return false;
+}
 
 bool handlePseudoLiterals(const std::string& s) {
     if (s == "nan" || s == "nanf") {
@@ -78,6 +86,7 @@ void printAsChar(long double v, bool ok)
         std::cout << "char: impossible\n";
         return;
     }
+    
     int iv = static_cast<int>(v);
     unsigned char uc = static_cast<unsigned char>(iv);
     if (std::isprint(uc))
@@ -174,7 +183,10 @@ void ScalarConverter::convert(const std::string& input)
 
         long double num = 0.0L;
         bool ok = parseLongDouble(numeric, num);
-        printAsChar(num, ok);
+        if (is_float(input))
+            printAsChar(num, false);
+        else
+            printAsChar(num, ok);
         printAsInt(num, ok);
         printAsFloat(num, ok);
         printAsDouble(num, ok);
