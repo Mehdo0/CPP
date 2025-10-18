@@ -6,16 +6,12 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:09:27 by mehdi             #+#    #+#             */
-/*   Updated: 2025/10/14 11:14:43 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/10/18 14:35:58 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
-#include <string>
-#include <sstream>
-#include <stdexcept>
-
 
 std::vector<int> parseAndValidateInput(int argc, char **argv) {
     if (argc < 2) {
@@ -48,8 +44,4 @@ std::vector<int> parseAndValidateInput(int argc, char **argv) {
         numbers.push_back(num);
     }
     return numbers;
-}
-
-std::vector<int> sorting_algo(std::vector<int> &list){
-    
 }
