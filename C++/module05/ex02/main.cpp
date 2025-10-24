@@ -6,7 +6,7 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 17:03:50 by mehdi             #+#    #+#             */
-/*   Updated: 2025/09/02 17:07:28 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/10/19 15:18:00 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main() {
         Bureaucrat boss("Boss", 1);
         ShrubberyCreationForm sform("garden");
         boss.signForm(sform);
-        boss.executeForm(sform); // devrait créer garden_shrubbery
+        boss.executeForm(sform);
     }
     catch (const std::exception& e) {
         std::cout << "Exception Shrubbery: " << e.what() << std::endl;
@@ -34,7 +34,7 @@ int main() {
         RobotomyRequestForm rform("Bender");
         doc.signForm(rform);
         for (int i = 0; i < 5; i++) {
-            doc.executeForm(rform); // 50% success/fail
+            doc.executeForm(rform);
         }
     }
     catch (const std::exception& e) {
@@ -46,7 +46,7 @@ int main() {
         Bureaucrat prez("Prez", 1);
         PresidentialPardonForm pform("Arthur Dent");
         prez.signForm(pform);
-        prez.executeForm(pform); // Arthur Dent pardonné
+        prez.executeForm(pform);
     }
     catch (const std::exception& e) {
         std::cout << "Exception Presidential: " << e.what() << std::endl;
@@ -56,8 +56,8 @@ int main() {
         std::cout << "\n=== Test échoué (grade trop bas) ===" << std::endl;
         Bureaucrat intern("Intern", 150);
         ShrubberyCreationForm failForm("office");
-        intern.signForm(failForm);    // devrait échouer (trop bas pour signer)
-        intern.executeForm(failForm); // pas exécuté
+        intern.signForm(failForm);
+        intern.executeForm(failForm);
     }
     catch (const std::exception& e) {
         std::cout << "Exception attendue: " << e.what() << std::endl;

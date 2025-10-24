@@ -6,7 +6,7 @@
 /*   By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 10:17:20 by mehdi             #+#    #+#             */
-/*   Updated: 2025/09/03 10:39:45 by mehdi            ###   ########.fr       */
+/*   Updated: 2025/10/19 15:30:23 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ class Intern{
     ~Intern();
     AForm* makeForm(std::string name, std::string target);
 };
-
-typedef void (Intern::*funcPtr)();
 
 #endif
